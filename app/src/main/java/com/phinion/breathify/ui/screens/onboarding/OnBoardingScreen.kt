@@ -139,11 +139,12 @@ fun OnBoardingScreen(
                         coroutineScope.launch {
                             if (AppUtils.validateName(onBoardingViewModel.userName.value)){
                                 pageCount++
-                                if (pageCount < pagerState.pageCount)
+                                if (pageCount < pagerState.pageCount){
                                     pagerState.scrollToPage(pageCount)
-                                else
+                                } else{
                                     onBoardingViewModel.saveOnBoardingState(true)
                                     context.showToast("OnBoarding Completed...")
+                                }
                                 progress += 0.25F
                             }else{
                                 context.showToast("Please enter correct name.")
