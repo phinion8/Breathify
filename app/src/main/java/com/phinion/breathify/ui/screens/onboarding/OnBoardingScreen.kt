@@ -142,6 +142,7 @@ fun OnBoardingScreen(
                                 if (pageCount < pagerState.pageCount)
                                     pagerState.scrollToPage(pageCount)
                                 else
+                                    onBoardingViewModel.saveOnBoardingState(true)
                                     context.showToast("OnBoarding Completed...")
                                 progress += 0.25F
                             }else{
